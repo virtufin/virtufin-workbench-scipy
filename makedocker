@@ -1,0 +1,1 @@
+docker build -t docker.haenerconsulting.com:443/virtufin/workbench-scipy .

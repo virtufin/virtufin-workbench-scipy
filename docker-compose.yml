@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  jupyter:
+    image: docker.haenerconsulting.com:443/virtufin/workbench-scipy
+    ports:
+      - "443:443"
+    volumes:
+      - ${BASEDIR}/home:/home

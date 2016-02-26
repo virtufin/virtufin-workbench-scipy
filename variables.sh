@@ -1,0 +1,1 @@
+export BASEDIR=`pwd -P`
