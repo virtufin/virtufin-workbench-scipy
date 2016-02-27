@@ -3,7 +3,7 @@ FROM jupyter/jupyterhub
 MAINTAINER Patrick Haener <contact@haenerconsulting.com>
 
 RUN mkdir /srv/jupyterhub/ssl 
-COPY ssl /srv/jupyterhub/
+COPY ssl /srv/jupyterhub/ssl/
 COPY logo.png /srv/jupyterhub/share/jupyter/hub/static/images/
 
 RUN \
