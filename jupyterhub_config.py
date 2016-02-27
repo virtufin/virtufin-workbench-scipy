@@ -1,5 +1,12 @@
 # Configuration file for jupyterhub.
 
+import os
+pjoin = os.path.join
+
+runtime_dir = pjoin('/srv/jupyterhub')
+ssl_dir = pjoin(runtime_dir, 'ssl')
+images_dir = pjoin(runtime_dir, 'hub/static/images')
+
 #------------------------------------------------------------------------------
 # Configurable configuration
 #------------------------------------------------------------------------------
@@ -111,7 +118,7 @@ c.JupyterHub.confirm_no_ssl = False
 # c.JupyterHub.cookie_secret = b''
 
 # File in which to store the cookie secret.
-# c.JupyterHub.cookie_secret_file = '/srv/jupyterhub/cookie_secret'
+# c.JupyterHub.cookie_secret_file = 'jupyterhub_cookie_secret'
 
 # The location of jupyterhub data files (e.g. /usr/local/share/jupyter/hub)
 # c.JupyterHub.data_files_path = '/opt/conda/share/jupyter/hub'
@@ -157,7 +164,7 @@ c.JupyterHub.confirm_no_ssl = False
 # c.JupyterHub.last_activity_interval = 300
 
 # Specify path to a logo image to override the Jupyter logo in the banner.
-c.JupyterHub.logo_file = '/srv/jupyterhub/share/jupyter/hub/static/images/logo.png'
+c.JupyterHub.logo_file = pjoin(images_dir, 'logo.png')
 
 # File to write PID Useful for daemonizing jupyterhub.
 # c.JupyterHub.pid_file = ''
@@ -174,7 +181,7 @@ c.JupyterHub.port = 443
 # The Proxy Auth token.
 # 
 # Loaded from the CONFIGPROXY_AUTH_TOKEN env variable by default.
-c.JupyterHub.proxy_auth_token = 'abfca59ab593a656ceac06b8940d6ce7a2b178ea3f4823be7a06cfc0abc6945e'
+# c.JupyterHub.proxy_auth_token = ''
 
 # Interval (in seconds) at which to check if the proxy is running.
 # c.JupyterHub.proxy_check_interval = 30
@@ -195,12 +202,12 @@ c.JupyterHub.proxy_auth_token = 'abfca59ab593a656ceac06b8940d6ce7a2b178ea3f4823b
 # Path to SSL certificate file for the public facing interface of the proxy
 # 
 # Use with ssl_key
-c.JupyterHub.ssl_cert = '/srv/jupyterhub/cert.pem'
+c.JupyterHub.ssl_cert = pjoin(ssl_dir, 'cert.pem')
 
 # Path to SSL key file for the public facing interface of the proxy
 # 
 # Use with ssl_cert
-c.JupyterHub.ssl_key = '/srv/jupyterhub/key.pem'
+c.JupyterHub.ssl_key = pjoin(ssl_dir, 'key.pem')
 
 # Paths to search for jinja templates.
 # c.JupyterHub.template_paths = []
