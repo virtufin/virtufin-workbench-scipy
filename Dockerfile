@@ -2,9 +2,8 @@ FROM jupyter/jupyterhub
 
 MAINTAINER Patrick Haener <contact@haenerconsulting.com>
 
-RUN mkdir /srv/jupyterhub/ssl 
-COPY ssl /srv/jupyterhub/ssl/
-COPY logo.png /srv/jupyterhub/share/jupyter/hub/static/images/
+COPY ssl /srv/jupyterhub/ssl
+COPY share /srv/jupyterhub/share
 
 RUN \
   /opt/conda/bin/conda install -y jupyter && \
