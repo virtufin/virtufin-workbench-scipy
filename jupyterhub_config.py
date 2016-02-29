@@ -165,7 +165,7 @@ c.JupyterHub.confirm_no_ssl = False
 
 # Specify path to a logo image to override the Jupyter logo in the banner.
 #c.JupyterHub.logo_file = pjoin(images_dir, 'logo.png')
-c.JupyterHub.logo_file = ''/srv/jupyterhub/share/jupyter/hub/static/images/logo.png''
+c.JupyterHub.logo_file = '/srv/jupyterhub/share/jupyter/hub/static/images/logo.png'
 
 # File to write PID Useful for daemonizing jupyterhub.
 # c.JupyterHub.pid_file = ''
