@@ -4,8 +4,9 @@ import os
 pjoin = os.path.join
 
 runtime_dir = pjoin('/srv/jupyterhub')
+static_dir = pjoin('/opt/conda/share/jupyter/hub/static')
 ssl_dir = pjoin(runtime_dir, 'ssl')
-images_dir = pjoin(runtime_dir, 'share/jupyter/hub/static/images')
+images_dir = pjoin(static_dir, 'images')
 
 #------------------------------------------------------------------------------
 # Configurable configuration

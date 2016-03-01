@@ -1,3 +1,4 @@
 #!/bin/bash
 source variables.sh
+lessc --clean-css share/jupyter/hub/static/less/style.less share/jupyter/hub/static/css/style.min.css
 docker build -t docker.haenerconsulting.com:443/virtufin/workbench-scipy .
