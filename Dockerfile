@@ -11,8 +11,8 @@ RUN \
   /opt/conda/bin/conda install -y pandas && \
   /opt/conda/bin/conda install -y xlrd && \
   /opt/conda/bin/conda install -y matplotlib && \
-  /opt/conda/bin/conda install -y kafka-python && \
-  /opt/conda/bin/conda install -y avro
+  /opt/conda/bin/pip install -y kafka-python && \
+  /opt/conda/bin/pip install -y avro
  
 RUN adduser admin && echo admin:admin | chpasswd
 RUN adduser guest && echo guest:guest | chpasswd
