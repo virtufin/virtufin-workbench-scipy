@@ -1,0 +1,4 @@
+#!/bin/bash
+
+source variables.sh
+docker-compose -f kafka.yml up
