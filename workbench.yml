@@ -12,7 +12,7 @@ services:
     links: 
       - zookeeper:zk
   jupyter:
-    image: docker.haenerconsulting.com:443/virtufin/workbench-scipy
+    image: docker.haenerconsulting.com:443/virtufin/virtufin-workbench-scipy
     ports:
       - "8443:443"
     volumes:
