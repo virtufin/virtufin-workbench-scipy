@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper
+    ports: 
+      - "2181"
+  kafka:
+    image: wurstmeister/kafka
+    ports:
+      - "9092"
+    links: 
+      - zookeeper:zk
+  jupyter:
+    image: docker.haenerconsulting.com:443/virtufin/workbench-scipy
+    ports:
+      - "8443:443"
+    volumes:
+      - ${BASEDIR}/home:/home
