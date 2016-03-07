@@ -15,5 +15,7 @@ services:
     image: docker.haenerconsulting.com/virtufin/virtufin-workbench-scipy
     ports:
       - "8443:443"
+    links:
+      - kafka
     volumes:
       - ${BASEDIR}/home:/home
