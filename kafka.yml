@@ -9,7 +9,14 @@ kafka:
   links: 
     - zookeeper:zk
   environment:
-    KAFKA_ADVERTISED_HOST_NAME: 192.168.59.103
     KAFKA_ADVERTISED_PORT: 9092
     ADVERTISED_PORT: 9092
+jupyter:
+  image: docker.haenerconsulting.com/virtufin/virtufin-workbench-scipy
+  ports:
+    - "8443:443"
+  links:
+    - kafka
+  volumes:
+    - ${BASEDIR}/home:/home
 
